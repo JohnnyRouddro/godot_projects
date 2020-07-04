@@ -1,0 +1,37 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://SmoothRotate.gd" type="Script" id=1]
+
+[sub_resource type="CubeMesh" id=4]
+
+[sub_resource type="PrismMesh" id=2]
+
+[sub_resource type="SpatialMaterial" id=3]
+albedo_color = Color( 0, 0.623529, 1, 1 )
+
+[node name="Spatial" type="Spatial"]
+script = ExtResource( 1 )
+
+[node name="Camera" type="Camera" parent="."]
+transform = Transform( 1, -8.16887e-08, 1.5459e-07, -4.13271e-08, 0.748666, 0.662947, -1.69891e-07, -0.662947, 0.748666, 0, 9.97556, 7.62013 )
+
+[node name="player" type="KinematicBody" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.928534, 0 )
+
+[node name="mesh" type="MeshInstance" parent="player"]
+mesh = SubResource( 4 )
+material/0 = null
+
+[node name="MeshInstance" type="MeshInstance" parent="player/mesh"]
+transform = Transform( 0.686671, 0, 0, 0, -8.98362e-09, 0.205521, 0, -0.686671, -3.00153e-08, 0, 1.20863, -0.624965 )
+mesh = SubResource( 2 )
+material/0 = SubResource( 3 )
+
+[node name="Label" type="Label" parent="."]
+margin_left = 104.431
+margin_top = 207.373
+margin_right = 144.431
+margin_bottom = 221.373
+__meta__ = {
+"_edit_use_anchors_": false
+}
